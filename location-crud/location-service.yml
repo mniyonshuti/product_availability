@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: location-crud
+  labels:
+    name: location-crud
+    app: product-availability
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    name: location-crud
+    app: product-availability

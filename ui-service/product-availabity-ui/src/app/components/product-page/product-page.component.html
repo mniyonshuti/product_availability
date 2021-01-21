@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Search product by product ID and location ID</h2>
+            <hr>
+            <p>Search on this page by product ID. Seach by Product Id will return all the products with the entered
+                snd display product details and the locations where the products are.</p>
+            <p>Seach by Location Id will return all the products in the location with the ID.</p>
+            <hr>
+        </div>
+        <div class="col-sm-5">
+            <form #productForm="ngForm" (ngSubmit)="onSubmitProduct(productForm.value)">
+                <div class="form-group">
+                    <label for="productId">Enter Product Id</label>
+                    <input id="productId" class="form-control" type="number" name="productId" ngModel>
+                    <small id="emailHelp" class="form-text text-muted">Enter the product id of the item you want to
+                        seach. Product Id is a value between 1 and 1000.</small>
+                </div>
+                <button type="submit" class="btn btn-success">Search by product Id</button>
+                <p style="width: 10px; height: auto; display: inline-block; "> </p>
+                <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+            </form>
+
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+            <form #locationForm="ngForm" (ngSubmit)="onSubmitLocation(locationForm.value)">
+                <div class="form-group">
+                    <label for="locationId">Enter Location Id</label>
+                    <input id="locationId" class="form-control" type="number" name="locationId" ngModel>
+                    <small id="emailHelp" class="form-text text-muted">Enter the Location id of the location to view
+                        items at that location.
+                        Location Id is a value between 1 and 1000.</small>
+                </div>
+                <button type="submit" class="btn btn-success">Search by Location ID</button>
+                <p style="width: 10px; height: auto; display: inline-block; "> </p>
+                <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

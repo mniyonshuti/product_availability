@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Product details</h2>
+        </div>
+        <div class="col-sm-4">
+            <p><b>Product ID: </b> {{product.productId}}</p>
+            <p><b>Name: </b>{{product.name}}</p>
+            <p><b>Description</b></p>
+            <p>{{product.description}}</p>
+        </div>
+        <div class="col-sm-1"> </div>
+        <div class="col-sm-7">
+            <img src={{product.imageUrl}} class="mr-2" style="width: 200px">
+        </div>
+        <div class="col-sm-9">
+            <P><b>Make your order at any of the locations below</b></P>
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Location ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantiy Available</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let location of locations; index as i">
+                        <td>{{ location.locationId}}</td>
+                        <td>{{ location.locationName}}</td>
+                        <td>{{ location.quantity}}</td>
+                        <td>
+                            <p>{{location.address.street}}, {{location.address.city}}, {{location.address.state}}
+                                {{location.address.zipCode}}, {{location.address.country}}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-3"></div>
+        <button type="button" class="btn btn-success" (click)="onCancel()">Back</button>
+    </div>
+</div>

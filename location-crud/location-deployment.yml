@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-crud-deployment
+  labels:
+    app: product-availability
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: location-crud
+      app: product-availability
+  template:
+    metadata:
+      name: location-crud
+      labels:
+        name: location-crud
+        app: product-availability
+
+    spec:
+      containers:
+        - name: location-crud
+          image: mniyonshuti/product-crud

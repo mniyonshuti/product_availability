@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-dark">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+            <a ngbNavLink routerLink = "">Home</a>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink routerLink = "/products">Products</a>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink routerLink = "">About Us</a>
+        </li>
+    </ul>
+    <div [ngbNavOutlet]="nav"></div>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+  </nav>
+
+  <div><div>
+      <div id="firstExpandValue"><i>+</i></div>
+    </div>
+  </div>

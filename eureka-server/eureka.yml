@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eureka-server
+  labels:
+    app: product-availability
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: eureka-server
+      labels:
+        name: eureka-server
+        app: product-availability
+    spec:
+      containers:
+        - name: eureka-server
+          image: mniyonshuti/eureka-server
+          ports:
+            - containerPort: 8761
+  selector:
+    matchLabels:
+      name: eureka-server
+      app: product-availability

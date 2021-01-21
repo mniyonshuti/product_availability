@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: com.cognizant.productavailability.Eureka.Server.EurekaServe
+ rApplication
+Spring-Boot-Version: 2.2.7.RELEASE
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+

@@ -1,0 +1,44 @@
+schema {
+    query: Query
+}
+type Query {
+    locations: [LocationDTO]
+    zipcodes(postalCode: Int, radius: Int): [Zipcode]
+    product(productId: Int): [Product]
+}
+type Product{
+    id: Int
+    productId: String
+    name: String
+    locationId: Int
+    quantity: Int
+    imageUrl: String
+    description: String
+}
+
+type Address {
+    id: Int
+    street: String
+    city: String
+    state: String
+    country: String
+    zipCode: String
+}
+
+type LocationDTO {
+    locationId: Int
+    locationName: String
+    address: Address
+    quantity: Int
+}
+type Zipcode {
+    adminCode1: String
+    adminName2: String
+    lng: String
+    distance: String
+    countryCode: String
+    postalCode: Int
+    adminName1: String
+    placeName:String
+    lat:String
+}

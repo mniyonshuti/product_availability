@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fems-deployment
+  labels:
+    app: product-availability
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: fems
+      app: product-availability
+  template:
+    metadata:
+      name: fems
+      labels:
+        name: fems
+        app: product-availability
+
+    spec:
+      containers:
+        - name: fems
+          image: mniyonshuti/fems-latest

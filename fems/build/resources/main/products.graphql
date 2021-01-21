@@ -1,0 +1,33 @@
+schema {
+    query: Query
+}
+type Query {
+    allProducts(distinct_on: [Int]): [Product]
+    locations: [LocationDTO]
+}
+type Product{
+    id: Int
+    productId: String
+    name: String
+    locationId: Int
+    quantity: Int
+    imageUrl: String
+    description: String
+}
+
+type Address {
+    id: Int
+    street: String
+    city: String
+    state: String
+    country: String
+    zipCode: String
+}
+
+type LocationDTO {
+    locationId: Int
+    locationName: String
+    address: Address
+    quantity: Int
+}
+
