@@ -1,0 +1,27 @@
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+#      defaultZone: http://34.69.93.99:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    appname: product-crud
+    prefer-ip-address: true
+spring:
+  application:
+    name: product-crud
+  data:
+    mongodb:
+#      uri: mongodb+srv://admin:k0HFJP0j6Wpr5dxf@capstone-ec6ib.mongodb.net/test?retryWrites=true&w=majority
+      uri: mongodb+srv://admin:Y0YWXRq4pECYq28a@capstone-ec6ib.mongodb.net/test?retryWrites=true&w=majority
+      database: Products-DB
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+ribbon:
+  eureka:
+    enabled: true
